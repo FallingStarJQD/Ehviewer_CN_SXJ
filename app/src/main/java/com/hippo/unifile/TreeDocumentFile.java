@@ -68,7 +68,7 @@ class TreeDocumentFile extends UniFile {
                 String extension = displayName.substring(index + 1);
                 String mimeType = MimeTypeMap.getSingleton().getMimeTypeFromExtension(extension);
                 if (!TextUtils.isEmpty(mimeType)) {
-                    final Uri result = DocumentsContractApi21.createFile(mContext, mUri, mimeType, name);
+                    final Uri result = DocumentsContractApi21.createFile(mContext, mUri, mimeType, name, displayName);
                     return (result != null) ? new TreeDocumentFile(this, mContext, result, displayName) : null;
                 }
             }
